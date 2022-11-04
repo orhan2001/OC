@@ -3,8 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(int argc, char **argv) {
-	opterr = 0;
+int main(int argc, char **argv)
+{
+    opterr = 0;
     char* name;
     int f = 0;
     int res = getopt(argc, argv, "f:");
