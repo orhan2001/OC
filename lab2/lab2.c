@@ -14,7 +14,7 @@ void readFromPipe(int file)
     struct tm* timeinfo;
     time(&rawtime);
     timeinfo = localtime(&rawtime);
-    printf("%s", asctime(timeinfo));
+    printf("PIPE:\nCHILD - %sPARENT - ", asctime(timeinfo));
     FILE *stream;
     int c;
     stream = fdopen(file, "r");
@@ -70,7 +70,7 @@ int main()
                 struct tm* timeinfo;
                 time(&rawtime);
                 timeinfo = localtime(&rawtime);
-                printf("%s", asctime(timeinfo));
+                printf("FIFO:\nCHILD - %sPARENT - ", asctime(timeinfo));
                 printf("%s", buf);
             }
             exit(0);
